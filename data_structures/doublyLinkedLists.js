@@ -143,6 +143,25 @@ class DoublyLinkedList {
         this.length--;
         return foundNode;
     }
+
+    reverse() {
+        const oldHead = this.head;
+        this.head = this.tail;
+        this.tail = oldHead;
+
+        let current = oldHead,
+            next;
+
+        for (let i = 0; i < this.length; i++) {
+            next = current.next;
+            current.next = current.prev;
+            current.prev = current.next;
+            current = next;
+        }
+
+        return this;
+
+    }
 }
 
 const dll = new DoublyLinkedList();
@@ -154,6 +173,8 @@ dll.push(4);
 dll.push(5);
 dll.push(6);
 
-console.log(dll.remove(4));
 
+
+dll.print();
+dll.reverse();
 dll.print();

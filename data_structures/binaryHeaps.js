@@ -6,6 +6,8 @@
 // Math.floor((n-1)/2)
 
 
+//there are some bugs in this code
+
 
 class MaxBinaryHeap {
     constructor() {
